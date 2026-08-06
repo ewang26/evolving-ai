@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Evolving AI — Harvard University, October 8–10, 2026</title>
+<meta name="description" content="Evolving AI — a gathering to catalyze modern evolutionary thinking in the AI community. Harvard University, October 8–10, 2026." />
+<meta property="og:title" content="Evolving AI" />
+<meta property="og:description" content="A gathering to catalyze modern evolutionary thinking in the AI community. Harvard University, October 8–10, 2026." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23191510'/%3E%3Crect x='6' y='9' width='20' height='1.8' fill='%23f1ece1'/%3E%3Crect x='6' y='15' width='20' height='1.8' fill='%237ca7ce'/%3E%3Crect x='6' y='21' width='12' height='1.8' fill='%23f1ece1'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#E7DEC9;
+    --paper-2:#DED4BD;
+    --ink:#191510;
+    --ink-2:#322c1f;
+    --band:#22423A;
+    --band-ink:#ece6d5;
+    --blue:#1E3E5C;
+    --blue-lt:#8fb2d2;
+    --muted:#655c47;
+    --rule:rgba(25,21,16,.26);
+    --rule-lt:rgba(25,21,16,.13);
+    --rule-dark:rgba(236,230,213,.24);
+    --paper-muted:rgba(236,230,213,.6);
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+    --maxw:1240px;
+    --pad:clamp(1.25rem,4.5vw,3.25rem);
+    --gut:clamp(1.5rem,3vw,2.75rem);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--serif);
+    font-size:clamp(1.04rem,.99rem + .22vw,1.16rem);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"kern" 1,"liga" 1;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--blue);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+
+  /* ---------- type helpers ---------- */
+  h1,h2,h3,h4{font-weight:400;line-height:1.02;letter-spacing:-.012em}
+  .label{
+    font-family:var(--mono);font-size:.72rem;font-weight:500;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--blue);
+  }
+  .label-ink{color:var(--ink)}
+  .num-mono{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+  em,.it{font-style:italic}
+
+  /* ---------- buttons / links ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.7rem;
+    font-family:var(--mono);font-size:.74rem;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;
+    padding:.9rem 1.4rem;border:1px solid var(--band);border-radius:0;
+    background:var(--band);color:var(--band-ink);cursor:pointer;
+    transition:background .18s linear,color .18s linear,border-color .18s linear;
+  }
+  .btn:hover{background:var(--blue);border-color:var(--blue);color:var(--band-ink)}
+  .btn-outline{background:transparent;color:var(--ink)}
+  .btn-outline:hover{background:var(--band);color:var(--band-ink);border-color:var(--band)}
+  .btn .ar{font-size:.9em;transform:translateY(-.02em)}
+
+  .tlink{
+    font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:.6rem;
+    border-bottom:1px solid var(--rule);padding-bottom:.25rem;transition:border-color .18s,color .18s;
+  }
+  .tlink:hover{color:var(--blue);border-color:var(--blue)}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;background:var(--paper);
+    border-bottom:1px solid var(--ink);
+  }
+  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:0 var(--pad);
+    height:56px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .nav-brand{font-family:var(--serif);font-size:1.15rem;letter-spacing:.005em;white-space:nowrap}
+  .nav-brand b{font-weight:500}
+  .nav-mid{display:flex;align-items:center;gap:2rem}
+  .nav-mid a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);
+    padding:.3rem 0;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+  .nav-mid a:hover{color:var(--blue)}
+  .nav-mid a.active{color:var(--blue);border-color:var(--blue)}
+  .nav-apply{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+    border:1px solid var(--band);padding:.5rem .9rem;transition:background .18s,color .18s}
+  .nav-apply:hover{background:var(--band);color:var(--band-ink)}
+  .nav-toggle{display:none;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    background:none;border:1px solid var(--ink);padding:.5rem .8rem;cursor:pointer;color:var(--ink)}
+  .nav-menu{display:none}
+
+  /* ---------- masthead / hero ---------- */
+  .hero{padding-top:clamp(1.75rem,4vw,3rem);padding-bottom:clamp(2.5rem,5vw,4rem)}
+  .dateline{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+    padding-bottom:.9rem;border-bottom:1px solid var(--ink);
+  }
+  .dateline .edition{color:var(--blue)}
+  .nameplate{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(4.2rem,17vw,15rem);line-height:.86;letter-spacing:-.03em;
+    padding:clamp(1.5rem,3.5vw,3rem) 0 clamp(1.2rem,2.5vw,2rem);
+    display:flex;align-items:baseline;gap:.12em;flex-wrap:wrap;
+  }
+  .nameplate .ai{font-style:italic;font-weight:300}
+  .subhead{
+    font-family:var(--mono);font-size:clamp(.72rem,1.1vw,.86rem);letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink);padding:1rem 0;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);
+    line-height:1.7;
+  }
+  .deck{padding-top:clamp(1.8rem,3.5vw,2.75rem)}
+  .deck-lede{font-size:clamp(1.4rem,2.5vw,2rem);line-height:1.34;font-weight:300;max-width:40ch}
+  .deck-lede .em{font-style:italic}
+  .deck-cta{display:flex;flex-wrap:wrap;gap:1rem 1.4rem;align-items:center;margin-top:2.2rem}
+
+  /* ---------- section scaffolding ---------- */
+  section{scroll-margin-top:72px}
+  .sec{padding-block:clamp(3.5rem,7vw,6rem);border-top:1px solid var(--ink)}
+  .sec-kicker{display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem}
+  .sec-kicker .ln{height:1px;background:var(--rule);flex:1}
+  .sec-title{font-size:clamp(1.9rem,4vw,3.15rem);max-width:20ch;letter-spacing:-.02em}
+  .sec-title em{font-weight:300}
+  .sec-lede{font-size:clamp(1.1rem,1.5vw,1.28rem);color:var(--ink-2);max-width:60ch;margin-top:1.4rem;font-weight:300;line-height:1.5}
+
+  /* ---------- vision essay (multicol) ---------- */
+  .essay{margin-top:clamp(2rem,3.5vw,3rem);
+    columns:2;column-gap:clamp(2rem,4vw,3.5rem);column-rule:1px solid var(--rule);
+    font-size:1.06rem;line-height:1.66;text-align:left;hyphens:auto}
+  @media(max-width:720px){.essay{columns:1}}
+  .essay p{margin-bottom:1.15rem;break-inside:avoid-column}
+  .essay p:last-child{margin-bottom:0}
+  .essay .lead::first-letter{
+    font-family:var(--serif);font-weight:500;font-size:3.6em;line-height:.72;
+    float:left;padding:.02em .1em 0 0;color:var(--blue);
+  }
+  .essay .kicker-run{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+  .margin-note{margin-top:2.5rem;border-top:3px double var(--ink);padding-top:1.25rem;
+    display:grid;grid-template-columns:1fr;gap:.5rem}
+  @media(min-width:720px){.margin-note{grid-template-columns:auto 1fr;gap:2rem;align-items:baseline}}
+  .margin-note .mn-term{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);white-space:nowrap}
+  .margin-note .mn-def{font-size:1.02rem;color:var(--ink-2);font-weight:300;max-width:70ch}
+
+  /* ---------- dark band: the gathering ---------- */
+  .band-dark{background:var(--band);color:var(--band-ink);border-top:1px solid var(--band)}
+  .band-dark .sec-kicker .ln{background:var(--rule-dark)}
+  .band-dark .label{color:var(--blue-lt)}
+  .band-dark .sec-title{color:var(--band-ink)}
+  .band-dark .sec-lede{color:var(--paper-muted)}
+  .band-dark .quad{border-top-color:rgba(236,230,213,.4)}
+  .sec.band-dark .qcol{border-color:var(--rule-dark)}
+  .band-dark .qcol .qlab{color:var(--blue-lt)}
+  .band-dark .qcol p{color:var(--paper-muted)}
+  .band-dark .qcol .em{color:var(--band-ink)}
+  .pq{margin:clamp(2rem,4vw,3rem) 0;padding:clamp(1.8rem,3.5vw,2.75rem) 0;
+    border-top:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark)}
+  .pq p{font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.24;font-weight:300;max-width:24ch}
+  .pq .qq{font-style:italic}
+  .pq cite{display:block;margin-top:1.5rem;font-family:var(--mono);font-style:normal;
+    font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-muted)}
+  .split{display:grid;grid-template-columns:1fr;gap:0}
+  @media(min-width:720px){.split{grid-template-columns:1fr 1fr}}
+  .split-col{padding:clamp(1.5rem,3vw,2.25rem) 0}
+  @media(min-width:720px){
+    .split-col{padding:.5rem clamp(1.5rem,3vw,2.5rem)}
+    .split-col:first-child{padding-left:0}
+    .split-col:last-child{padding-right:0;border-left:1px solid var(--rule-dark)}
+  }
+  @media(max-width:719px){.split-col + .split-col{border-top:1px solid var(--rule-dark)}}
+  .split-num{font-family:var(--serif);font-size:clamp(4rem,11vw,7.5rem);line-height:.9;letter-spacing:-.03em;display:block}
+  .split-label{font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--blue-lt);display:block;margin:.6rem 0 .9rem}
+  .split-col p{color:var(--paper-muted);font-weight:300;max-width:34ch;font-size:1.02rem;line-height:1.5}
+
+  /* ---------- themes index ---------- */
+  .index{margin-top:clamp(2rem,3.5vw,2.75rem);border-top:3px double var(--ink);border-bottom:3px double var(--ink)}
+  .idx-row{display:grid;grid-template-columns:3.5rem 1fr;gap:.4rem 1.5rem;align-items:baseline;
+    padding:1.35rem .5rem;border-bottom:1px solid var(--rule-lt);transition:background .18s,padding .18s}
+  .idx-row:last-child{border-bottom:none}
+  @media(min-width:860px){.idx-row{grid-template-columns:4rem minmax(0,1.05fr) minmax(0,1.15fr);gap:2rem;padding:1.5rem .75rem}}
+  .idx-row:hover{background:var(--paper-2)}
+  .idx-row:hover .idx-num{color:var(--blue)}
+  .idx-num{font-family:var(--mono);font-size:.9rem;font-weight:500;color:var(--muted);letter-spacing:.02em;transition:color .18s}
+  .idx-title{font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.15;letter-spacing:-.01em}
+  .idx-desc{color:var(--muted);font-weight:300;font-size:1rem;line-height:1.5;grid-column:2/-1}
+  @media(min-width:860px){.idx-desc{grid-column:auto}}
+
+  /* ---------- tinbergen table ---------- */
+  .quad{margin-top:clamp(2rem,3.5vw,2.75rem);border-top:3px double var(--ink);
+    display:grid;grid-template-columns:1fr 1fr}
+  @media(min-width:900px){.quad{grid-template-columns:repeat(4,1fr)}}
+  .qcol{padding:clamp(1.5rem,2.5vw,2rem) clamp(1.1rem,2vw,1.6rem);border-bottom:1px solid var(--rule)}
+  .qcol{border-left:1px solid var(--rule)}
+  .qcol:nth-child(odd){border-left:none}
+  @media(min-width:900px){
+    .qcol{border-bottom:none}
+    .qcol:nth-child(odd){border-left:1px solid var(--rule)}
+    .qcol:first-child{border-left:none}
+  }
+  .qcol .qlab{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+  .qcol h3{font-size:clamp(1.7rem,2.4vw,2.1rem);margin:.7rem 0 .8rem;font-style:italic;font-weight:300}
+  .qcol p{font-size:.96rem;color:var(--muted);font-weight:300;line-height:1.5}
+  .qcol .em{font-style:italic;color:var(--ink-2)}
+
+  /* ---------- fellowships ---------- */
+  .fel-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,5vw,4rem);margin-top:clamp(2rem,3.5vw,3rem)}
+  @media(min-width:880px){.fel-grid{grid-template-columns:1.25fr 1fr}}
+  .fel-body p{font-size:1.1rem;font-weight:300;line-height:1.55;color:var(--ink-2);max-width:52ch}
+  .promptblock{margin-top:2rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:1.6rem 0}
+  .promptblock .plab{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:1rem}
+  .promptblock .pq2{font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.3;font-style:italic;font-weight:300}
+  .promptblock .plim{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted);margin-top:1.1rem;text-transform:uppercase}
+  .apply-col .col-h{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+    padding-bottom:.9rem;border-bottom:1px solid var(--ink);margin-bottom:.5rem}
+  .steps{list-style:none}
+  .steps li{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--rule-lt);align-items:baseline}
+  .steps .sn{font-family:var(--mono);font-weight:500;color:var(--blue);font-size:.95rem}
+  .steps p{font-weight:300;font-size:1rem;line-height:1.5;color:var(--ink-2)}
+  .steps b{font-weight:500;color:var(--ink)}
+  .apply-cta{margin-top:1.8rem;display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
+  .apply-note{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- conveners ---------- */
+  .board{margin-top:clamp(2rem,3.5vw,2.75rem);display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem)}
+  @media(min-width:820px){.board{grid-template-columns:auto 1fr;gap:clamp(3rem,6vw,5rem)}}
+  .board-h{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);
+    padding-bottom:1rem;margin-bottom:.4rem;border-bottom:1px solid var(--ink)}
+  .name-row{padding:1rem 0;border-bottom:1px solid var(--rule-lt);display:flex;flex-direction:column;gap:.15rem}
+  .name-row .nm{font-size:clamp(1.3rem,2vw,1.7rem);letter-spacing:-.01em}
+  .name-row .af{font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+  .board-names{display:grid;grid-template-columns:1fr;gap:0 clamp(2rem,4vw,3.5rem)}
+  @media(min-width:600px){.planners{grid-template-columns:1fr 1fr}}
+
+  /* ---------- footer / colophon ---------- */
+  .colophon{background:var(--band);color:var(--band-ink);padding-block:clamp(3rem,6vw,5rem)}
+  .colo-top{font-family:var(--serif);font-size:clamp(3rem,10vw,7rem);line-height:.9;letter-spacing:-.03em;
+    padding-bottom:clamp(1.5rem,3vw,2.5rem);border-bottom:1px solid var(--rule-dark)}
+  .colo-top .ai{font-style:italic;font-weight:300}
+  .colo-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;padding-top:clamp(2rem,3.5vw,3rem)}
+  @media(min-width:700px){.colo-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .colo-col h5{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-lt);margin-bottom:1rem}
+  .colo-col p,.colo-col a{font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--paper-muted);line-height:2;display:block}
+  .colo-col a:hover{color:var(--paper)}
+  .colo-lede{font-family:var(--serif);font-size:1.15rem;font-weight:300;color:var(--band-ink);line-height:1.4;max-width:26ch}
+  .colo-bottom{max-width:var(--maxw);margin:clamp(2.5rem,5vw,4rem) auto 0;padding-top:1.5rem;border-top:1px solid var(--rule-dark);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--paper-muted)}
+
+  /* ---------- reveal ---------- */
+  .rev{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+  .rev.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}}
+
+  /* ---------- mobile nav ---------- */
+  @media(max-width:840px){
+    .nav-mid,.nav-apply{display:none}
+    .nav-toggle{display:inline-block}
+    .nav-menu{
+      display:block;position:fixed;left:0;right:0;top:56px;z-index:49;
+      background:var(--paper);border-bottom:1px solid var(--ink);
+      transform:translateY(calc(-100% - 56px));visibility:hidden;
+      transition:transform .34s cubic-bezier(.2,.6,.2,1),visibility 0s linear .34s;
+      max-height:calc(100vh - 56px);overflow-y:auto;
+    }
+    .nav-menu.open{transform:translateY(0);visibility:visible;
+      transition:transform .34s cubic-bezier(.2,.6,.2,1)}
+    .nav-menu a{display:flex;justify-content:space-between;align-items:center;
+      font-family:var(--mono);font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;
+      padding:1.15rem var(--pad);border-bottom:1px solid var(--rule-lt);color:var(--ink)}
+    .nav-menu a .mi{font-family:var(--mono);color:var(--muted);font-size:.7rem}
+    .nav-menu a:hover{color:var(--blue)}
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- ================= NAV ================= -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a class="nav-brand" href="#top">Evolving <b>AI</b></a>
+    <div class="nav-mid">
+      <a href="#vision">Premise</a>
+      <a href="#gathering">The Gathering</a>
+      <a href="#themes">Themes</a>
+      <a href="#fellowships">Fellowships</a>
+      <a href="#conveners">Conveners</a>
+    </div>
+    <a class="nav-apply" href="#fellowships">Apply</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+  </div>
+  <div class="nav-menu" id="navMenu">
+    <a href="#vision">Premise <span class="mi">01</span></a>
+    <a href="#gathering">The Gathering <span class="mi">02</span></a>
+    <a href="#themes">Themes <span class="mi">03</span></a>
+    <a href="#tinbergen">The Framework <span class="mi">04</span></a>
+    <a href="#fellowships">Fellowships <span class="mi">05</span></a>
+    <a href="#conveners">Conveners <span class="mi">06</span></a>
+  </div>
+</nav>
+
+<!-- ================= HERO / MASTHEAD ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div class="dateline">
+      <span>Cambridge, Massachusetts</span>
+      <span>October 8–10, 2026</span>
+    </div>
+    <h1 class="nameplate">Evolving <span class="ai">AI</span></h1>
+    <p class="subhead">A Gathering to Catalyze Modern Evolutionary Thinking in the AI Community</p>
+    <div class="deck">
+      <div>
+        <p class="deck-lede">Two communities — artificial intelligence and evolutionary science — convened at Harvard to accelerate <span class="em">a reaction already underway.</span></p>
+        <div class="deck-cta">
+          <a class="btn" href="#fellowships">Apply for a Fellowship <span class="ar">→</span></a>
+          <a class="tlink" href="#vision">Read the premise</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 01 · PREMISE ================= -->
+<section class="sec" id="vision">
+  <div class="wrap">    <h2 class="sec-title rev">Artificial intelligence is a turning point in human history — a <em>major evolutionary transition.</em></h2>
+    <div class="essay rev">
+      <p class="lead">Artificial intelligence can be described as a major evolutionary transition, or MET — comparable to earlier transitions in human evolution, such as the emergence of spoken language, and in biological evolution, such as the rise of multicellular organisms and ultrasocial animal societies. Yet modern evolutionary science, including what we have learned from these other transitions, is not yet being leveraged in the field of AI.</p>
+      <p>There is a reason for this vacuum of knowledge. <span class="kicker-run">Evolutionary science</span> was confined to the study of genetic evolution for most of the twentieth century. The study of other evolutionary processes — human cultural evolution, and evolutionary algorithms on computers — is far more recent, and only slightly predates the AI revolution itself.</p>
+      <p>There is an urgent need to catalyze the integration of these two revolutions. Modern evolutionary science speaks clearly about the special conditions required for societies of all sorts to function as cooperative units — including societies infused by AI. This gathering exists to bring those conditions to light.</p>
+    </div>
+    <div class="margin-note rev">
+      <span class="mn-term">MET — Major Evolutionary Transition</span>
+      <span class="mn-def">The framework that connects the emergence of language, multicellularity, and ultrasociality — and now situates artificial intelligence as the newest such transition in the history of life on earth.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 · THE GATHERING (dark band) ================= -->
+<section class="sec band-dark" id="gathering">
+  <div class="wrap">    <h2 class="sec-title rev">Fifty minds, held in <em>catalytic proximity.</em></h2>
+    <blockquote class="pq rev">
+      <p><span class="qq">“Catalysis is more than a poetic metaphor. Catalytic molecules grab onto others, hold them in an orientation that binds them together, then release to repeat the process.”</span></p>
+      <cite>The reaction proceeds orders of magnitude faster than it otherwise would</cite>
+    </blockquote>
+    <div class="split rev">
+      <div class="split-col">
+        <span class="split-num">25</span>
+        <span class="split-label">The AI Community</span>
+        <p>Members who appreciate the need for an evolutionary perspective on the technology they are building.</p>
+      </div>
+      <div class="split-col">
+        <span class="split-num">25</span>
+        <span class="split-label">Evolutionary Science</span>
+        <p>Members who have already begun thinking about, and working in, artificial intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 · THEMES ================= -->
+<section class="sec" id="themes">
+  <div class="wrap">    <h2 class="sec-title rev">Nine threads, one <em>evolving</em> conversation.</h2>
+    <p class="sec-lede rev">The questions we will hold in the room over three days — where evolutionary theory meets the practice of building intelligent systems.</p>
+    <div class="index rev">
+      <div class="idx-row"><span class="idx-num">01</span><span class="idx-title">Aligning interests with the common good</span><span class="idx-desc">The fundamental evolutionary problem of aligning lower-level interests with the higher-level common good.</span></div>
+      <div class="idx-row"><span class="idx-num">02</span><span class="idx-title">AI as the newest MET</span><span class="idx-desc">The relevance of other transitions in biological and cultural evolution to understanding AI as the newest major evolutionary transition.</span></div>
+      <div class="idx-row"><span class="idx-num">03</span><span class="idx-title">Selection pressures on AI</span><span class="idx-desc">The political and economic selection pressures that generate the environment within which AI evolution takes place.</span></div>
+      <div class="idx-row"><span class="idx-num">04</span><span class="idx-title">Evolution-informed learning</span><span class="idx-desc">Evolution-informed reinforcement learning, model training, and agent evaluation.</span></div>
+      <div class="idx-row"><span class="idx-num">05</span><span class="idx-title">Co-evolution of agents</span><span class="idx-desc">The co-evolution of human agents, AI agents, and human/AI hybrids.</span></div>
+      <div class="idx-row"><span class="idx-num">06</span><span class="idx-title">Memory &amp; situational awareness</span><span class="idx-desc">Long-term memory and situational awareness as foundations for adaptive intelligence.</span></div>
+      <div class="idx-row"><span class="idx-num">07</span><span class="idx-title">Collective intelligence</span><span class="idx-desc">The concept of collective intelligence — how groups come to know and act as more than the sum of their parts.</span></div>
+      <div class="idx-row"><span class="idx-num">08</span><span class="idx-title">Benchmarks for cooperation</span><span class="idx-desc">Benchmarks for AI cooperation and social behavior.</span></div>
+      <div class="idx-row"><span class="idx-num">09</span><span class="idx-title">Workshops on human–AI cooperation</span><span class="idx-desc">Hands-on workshops on the practical applications of human–AI cooperation.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 · THE FRAMEWORK (Tinbergen) ================= -->
+<section class="sec" id="tinbergen">
+  <div class="wrap">    <h2 class="sec-title rev">Tinbergen's four questions.</h2>
+    <p class="sec-lede rev">Four complementary bodies of knowledge, needed for a full understanding of every product of evolution — from a birdsong to a language model.</p>
+    <div class="quad rev">
+      <div class="qcol"><span class="qlab">Function</span><h3>Why?</h3><p>The adaptive purpose a trait serves — what it is <span class="em">for.</span></p></div>
+      <div class="qcol"><span class="qlab">History</span><h3>Whence?</h3><p>The evolutionary lineage — how it came to be, over deep time.</p></div>
+      <div class="qcol"><span class="qlab">Mechanism</span><h3>How?</h3><p>The immediate machinery that makes it work in the present.</p></div>
+      <div class="qcol"><span class="qlab">Development</span><h3>From what?</h3><p>How it assembles and unfolds across a single lifetime.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 · FELLOWSHIPS ================= -->
+<section class="sec" id="fellowships">
+  <div class="wrap">    <h2 class="sec-title rev">For the next generation of <em>thinkers and builders.</em></h2>
+    <div class="fel-grid">
+      <div class="fel-body rev">
+        <p>We are pleased to provide fellowships for the next generation of students, early-career researchers, and builders to join this gathering as the first Evolving AI Fellowship cohort. Apply as an individual, or as a small team of two or three who have a history of working together on research, building, or both.</p>
+        <div class="promptblock">
+          <span class="plab">The Essay Question</span>
+          <p class="pq2">What do you think the future of human–AI interaction will look like in five years? And what role do you think evolutionary science has to play in that future?</p>
+          <p class="plim">Answer in under 500 words · Submit with a short form and your CV</p>
+        </div>
+      </div>
+      <div class="apply-col rev">
+        <div class="col-h">How to Apply</div>
+        <ol class="steps">
+          <li><span class="sn">01</span><p>Complete the application form with your basic details and upload your CV.</p></li>
+          <li><span class="sn">02</span><p>Answer the essay question in fewer than 500 words.</p></li>
+          <li><span class="sn">03</span><p><b>Applying as a team?</b> Each member submits separately, with a brief note on why you are applying collectively, your history together, and what you hope to accomplish as a group.</p></li>
+        </ol>
+        <div class="apply-cta">
+          <!-- TODO: replace href="#" with the live Google Form application URL when available -->
+          <a class="btn" href="#" id="applyBtn">Begin Application <span class="ar">→</span></a>
+          <span class="apply-note">Application form opening soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 · CONVENERS ================= -->
+<section class="sec" id="conveners">
+  <div class="wrap">    <h2 class="sec-title rev">Convened by.</h2>
+    <div class="board">
+      <div class="rev">
+        <div class="board-h">Organizers</div>
+        <div class="board-names">
+          <div class="name-row"><span class="nm">Peter Fenton</span><span class="af">Benchmark</span></div>
+          <div class="name-row"><span class="nm">David Sloan Wilson</span><span class="af">ProSocial World</span></div>
+        </div>
+      </div>
+      <div class="rev">
+        <div class="board-h">Core Planning Group</div>
+        <div class="board-names planners">
+          <div class="name-row"><span class="nm">Athena Aktipis</span><span class="af">Cooperative Futures Institute, ASU</span></div>
+          <div class="name-row"><span class="nm">Jonathan Frankle</span><span class="af">Databricks</span></div>
+          <div class="name-row"><span class="nm">Joseph Henrich</span><span class="af">Harvard</span></div>
+          <div class="name-row"><span class="nm">Sandy Pentland</span><span class="af">MIT &amp; Stanford</span></div>
+          <div class="name-row"><span class="nm">James Tamplin</span><span class="af">Kradle.ai</span></div>
+          <div class="name-row"><span class="nm">Erik Wang</span><span class="af">Benchmark</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COLOPHON / FOOTER ================= -->
+<footer class="colophon">
+  <div class="wrap">
+    <div class="colo-top">Evolving <span class="ai">AI</span></div>
+    <div class="colo-grid">
+      <div class="colo-col">
+        <p class="colo-lede">A gathering to catalyze modern evolutionary thinking in the AI community.</p>
+      </div>
+      <div class="colo-col">
+        <h5>The Event</h5>
+        <p>Harvard University</p>
+        <p>Cambridge, Massachusetts</p>
+        <p>October 8–10, 2026</p>
+      </div>
+      <div class="colo-col">
+        <h5>Navigate</h5>
+        <a href="#vision">Premise</a>
+        <a href="#gathering">The Gathering</a>
+        <a href="#themes">Themes</a>
+        <a href="#fellowships">Fellowships</a>
+        <a href="#conveners">Conveners</a>
+      </div>
+    </div>
+    <div class="colo-bottom">
+      <span>© 2026 Evolving AI — Benchmark &amp; ProSocial World</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* mobile menu */
+  var t = document.getElementById("navToggle");
+  var m = document.getElementById("navMenu");
+  function close(){ m.classList.remove("open"); t.setAttribute("aria-expanded","false"); t.textContent="Menu"; }
+  t.addEventListener("click", function(){
+    var open = m.classList.toggle("open");
+    t.setAttribute("aria-expanded", open?"true":"false");
+    t.textContent = open ? "Close" : "Menu";
+  });
+  m.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", close); });
+
+  /* reveal on scroll */
+  var revs = document.querySelectorAll(".rev");
+  if("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {threshold:.14, rootMargin:"0px 0px -6% 0px"});
+    revs.forEach(function(r){ io.observe(r); });
+  } else { revs.forEach(function(r){ r.classList.add("in"); }); }
+
+  /* active nav link */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-mid a'));
+  var map = {}; links.forEach(function(l){ var s=document.querySelector(l.getAttribute("href")); if(s) map[s.id]=l; });
+  if("IntersectionObserver" in window){
+    var spy = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ links.forEach(function(l){ l.classList.remove("active"); }); if(map[e.target.id]) map[e.target.id].classList.add("active"); }
+      });
+    }, {rootMargin:"-45% 0px -50% 0px"});
+    Object.keys(map).forEach(function(id){ spy.observe(document.getElementById(id)); });
+  }
+
+  /* placeholder apply button */
+  var ab = document.getElementById("applyBtn");
+  if(ab){ ab.addEventListener("click", function(ev){
+    if(ab.getAttribute("href")==="#"){ ev.preventDefault();
+      var n = ab.parentNode.querySelector(".apply-note");
+      if(n){ n.textContent="The application form will be linked here shortly."; n.style.color="var(--blue)"; }
+    }
+  }); }
+})();
+</script>
+</body>
+</html>
