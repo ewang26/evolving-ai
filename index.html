@@ -184,12 +184,29 @@
     line-height:1.5;color:var(--muted);max-width:38ch;
   }
   .hero .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
-  .hero .cta .btn{min-width:13.5rem;white-space:nowrap}
+  .hero .cta .btn{white-space:nowrap}
+  .hero-mark .venn-ring{fill:none;stroke:var(--accent);stroke-width:1.45}
+  .hero-mark .venn-lens{fill:var(--accent);fill-opacity:.17}
+  .hero-mark .venn-join{fill:var(--accent)}
+  .hero-mark .venn-ai{
+    fill:var(--accent);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:31px;
+    font-optical-sizing:auto;
+  }
+  .hero-mark .venn-evo{
+    fill:var(--accent);
+    font-family:var(--serif);
+    font-size:13.5px;
+    letter-spacing:.035em;
+    font-optical-sizing:auto;
+  }
 
   @media(max-width:880px){
     .hero{min-height:auto;padding:2.6rem 0 3.2rem}
     .hero-grid{grid-template-columns:1fr;gap:2.2rem}
-    .hero-mark{max-width:16rem;justify-self:start}
+    .hero-mark{max-width:20rem;justify-self:start}
     .hero h1{font-size:clamp(2.6rem,12vw,3.6rem)}
     .hero .lede{max-width:36ch}
   }
@@ -207,7 +224,7 @@
   h2 em{font-style:italic;font-weight:400}
 
   .prose{max-width:none}
-  .prose p{color:var(--muted);text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+  .prose p{color:var(--muted);text-align:left}
   .prose p + p{margin-top:1.2rem}
 
   .topics{list-style:none;border-top:1px solid var(--line)}
@@ -222,7 +239,7 @@
     line-height:1;letter-spacing:0;padding-top:.1rem;
   }
   .topics h3{font-size:clamp(1.25rem,2vw,1.55rem);font-weight:400;letter-spacing:0;line-height:1.2;padding-top:.35rem}
-  .topics p{grid-column:2;font-size:1.02rem;line-height:1.6;color:var(--muted);margin-top:.55rem;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+  .topics p{grid-column:2;font-size:1.02rem;line-height:1.6;color:var(--muted);margin-top:.55rem;text-align:left}
   @media(max-width:560px){
     .topics li{grid-template-columns:1fr;gap:.35rem}
     .topics p{grid-column:1}
@@ -244,7 +261,7 @@
     letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
     margin:1.05rem 0 .6rem;
   }
-  .half p{font-size:.98rem;color:var(--muted);line-height:1.55;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+  .half p{font-size:.98rem;color:var(--muted);line-height:1.55;text-align:left}
   @media(max-width:600px){
     .split{grid-template-columns:1fr}
   }
@@ -263,6 +280,7 @@
     color:var(--muted);margin-top:1rem;
   }
   .apply-row{display:flex;align-items:center;flex-wrap:wrap;gap:.9rem 1.15rem;margin-top:2.2rem}
+  .apply-row p{margin:0;font-size:.95rem}
 
   .perks{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem;margin:2.2rem 0}
   .perk{
@@ -271,7 +289,7 @@
     border-top:1px solid var(--accent);
   }
   .perk h3{font-size:clamp(1.15rem,1.8vw,1.35rem);font-weight:400;line-height:1.35;letter-spacing:0;margin-bottom:.75rem}
-  .perk p{font-size:.98rem;color:var(--muted);line-height:1.6;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+  .perk p{font-size:.98rem;color:var(--muted);line-height:1.6;text-align:left}
   @media(max-width:680px){.perks{grid-template-columns:1fr}}
 
   .people{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
@@ -361,18 +379,23 @@
         <h1>Evolving <em>AI</em></h1>
         <p class="lede">A gathering of AI researchers and evolutionary scientists to catalyze serious conversation on human–AI coevolution.</p>
         <div class="cta">
-          <a class="btn btn-accent" href="#fellowships">Curious about becoming a fellow?</a>
+          <a class="btn btn-accent" href="#fellowships">See our inaugural fellowship program.</a>
         </div>
       </div>
-      <svg class="hero-mark" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg class="hero-mark" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="venn-title">
+        <title id="venn-title">Two overlapping fields: AI and Evolutionary Science</title>
         <defs>
-          <clipPath id="c1"><circle cx="148" cy="160" r="122"/></clipPath>
+          <clipPath id="left-disk"><circle cx="146" cy="160" r="118"/></clipPath>
         </defs>
-        <circle cx="252" cy="160" r="122" fill="#C9A36A" fill-opacity=".16" clip-path="url(#c1)"/>
-        <circle cx="148" cy="160" r="122" stroke="#C9A36A" stroke-width="1.6"/>
-        <circle cx="252" cy="160" r="122" stroke="#C9A36A" stroke-width="1.6"/>
-        <circle cx="148" cy="160" r="86" stroke="#C9A36A" stroke-width="1" stroke-opacity=".4"/>
-        <circle cx="252" cy="160" r="86" stroke="#C9A36A" stroke-width="1" stroke-opacity=".4"/>
+        <circle class="venn-lens" cx="254" cy="160" r="118" clip-path="url(#left-disk)"/>
+        <circle class="venn-ring" cx="146" cy="160" r="118"/>
+        <circle class="venn-ring" cx="254" cy="160" r="118"/>
+        <circle class="venn-join" cx="200" cy="160" r="2.6"/>
+        <text class="venn-ai" x="88" y="168" text-anchor="middle">AI</text>
+        <text class="venn-evo" x="312" y="160" text-anchor="middle">
+          <tspan x="312" dy="0">Evolutionary</tspan>
+          <tspan x="312" dy="17">Science</tspan>
+        </text>
       </svg>
     </div>
   </div>
@@ -386,7 +409,7 @@
       <div class="prose">
         <p>AI can be seen as a major evolutionary transition, of the same kind as the origin of cells, multicellular organisms, animal societies, and human language and culture. In each of those cases, a new system of inheritance or a new level of individuality emerged.</p>
         <p>Evolutionary science has learned a great deal from these transitions, but little of it is being applied to AI. One reason for this gap is that for most of the twentieth century, evolutionary science was confined to the study of genetic evolution. The study of other evolutionary processes, such as cultural evolution and evolutionary algorithms, is much more recent and only slightly predates the AI revolution.</p>
-        <p>Modern evolutionary science is specific about the conditions under which groups of self-interested parts, from cells to human societies, come to function as cooperative wholes. Those conditions are directly relevant to systems of AI agents, especially superintelligent ones, and the societies that include them. We expect the event to result in an explosion of ideas, collaborations, and projects, which can influence the outcome of the AI revolution in the immediate future.</p>
+        <p>Modern evolutionary science is specific about the conditions under which groups of self-interested parts, from cells to human societies, come to function as cooperative wholes. Those conditions are directly relevant to systems of AI agents, especially superintelligent ones, and the societies that include them. We expect the gathering to result in collaborations and projects with lasting influence on how this transition unfolds.</p>
       </div>
     </div>
   </section>
@@ -421,7 +444,7 @@
         <li>
           <span class="num">v</span>
           <h3>Steering Open-Ended AI Ecosystems</h3>
-          <p>What practical strategies can preserve diversity, innovation, and evolvability while shaping the selection pressures acting on agents, companies, markets, and states toward socially beneficial outcomes?</p>
+          <p>What practical strategies can achieve goals of diversity, innovation, and evolvability while shaping the selection pressures acting on agents, companies, markets, and states toward socially beneficial outcomes?</p>
         </li>
       </ol>
     </div>
@@ -456,22 +479,23 @@
         <h2>The first Evolving AI Fellowship cohort</h2>
       </div>
       <div class="prose">
-        <p>We are providing fellowships for the next generation of students, early-career researchers, and builders to join the gathering as the first Evolving AI Fellowship cohort. You can apply as an individual or as a small team of two or three with a history of working together on research, building, or both.</p>
+        <p>We are providing fellowships for the next generation of students, early-career researchers, and builders to join the gathering as the first Evolving AI Fellowship cohort. The fellowship is fully funded, including travel, accommodation, and meals. You can apply as an individual or as a small team of two or three with a history of working together on research, building, or both.</p>
       </div>
       <div class="perks">
         <div class="perk">
-          <h3>An opportunity to meet world-renowned experts in AI and evolutionary science</h3>
-          <p>Our invited attendees include MacArthur Fellows, technology entrepreneurs, authors of best-selling books, and professors from all across the world. Very few gatherings offer such an intimate opportunity to learn from the very best of the best.</p>
+          <h3>An intimate gathering</h3>
+          <p>Invited attendees include MacArthur Fellows, technology entrepreneurs, authors of best-selling books, and professors from around the world. The gathering is intimate.</p>
         </div>
         <div class="perk">
           <h3>Long-term projects with peers and experts</h3>
-          <p>You will partner with your peers and our invited experts to work on long-term projects. Our goal is that with our support and network, you will be able to pursue projects that innovate beyond an ordinary research paper.</p>
+          <p>Fellows work on long-term projects with peers and invited experts. The goal is work that goes beyond an ordinary research paper.</p>
         </div>
       </div>
       <div class="prose">
         <p>Teams each submit a separate application, with a brief note on why you are applying together, your history of working together, and what you hope to accomplish as a group.</p>
         <div class="apply-row">
           <a class="btn btn-accent" href="https://forms.gle/7ZJnLgWfuUxUvnoX6" target="_blank" rel="noopener">Apply for a fellowship</a>
+          <p>Fully funded, including travel, accommodation, and meals.</p>
         </div>
       </div>
     </div>
