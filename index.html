@@ -198,26 +198,6 @@
     .hero .cta .btn{min-width:0;width:100%}
   }
 
-  .facts{
-    background:var(--surface);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--accent);
-  }
-  .facts-grid{
-    display:grid;grid-template-columns:1fr 1fr 1.55fr;
-    max-width:76rem;margin-inline:auto;padding:1.85rem 1.5rem;
-    gap:0;
-  }
-  .fact{display:flex;align-items:center;padding:0 2rem 0 0;position:relative}
-  .fact + .fact{padding-left:2rem;border-left:1px solid var(--line)}
-  .fact .v{font-size:clamp(1.1rem,1.7vw,1.35rem);line-height:1.4;color:var(--text);letter-spacing:0;text-wrap:balance}
-
-  @media(max-width:780px){
-    .facts-grid{grid-template-columns:1fr;padding:0 1.5rem}
-    .fact{padding:1.45rem 0}
-    .fact + .fact{border-left:none;border-top:1px solid var(--line);padding-left:0}
-  }
-
   section{padding:6rem 0;scroll-margin-top:5rem}
   .wash{background:var(--wash)}
   .sec-head{margin-bottom:2.6rem;max-width:52rem}
@@ -335,7 +315,7 @@
   }
 
   @media(max-width:400px){
-    .container,.hero-wrap,.facts-grid{padding-inline:1.15rem}
+    .container,.hero-wrap{padding-inline:1.15rem}
     .nav{padding-inline:1.15rem}
   }
 </style>
@@ -393,14 +373,6 @@
         <circle cx="148" cy="160" r="86" stroke="#C9A36A" stroke-width="1" stroke-opacity=".4"/>
         <circle cx="252" cy="160" r="86" stroke="#C9A36A" stroke-width="1" stroke-opacity=".4"/>
       </svg>
-    </div>
-  </div>
-
-  <div class="facts">
-    <div class="facts-grid">
-      <div class="fact"><span class="v">October 8–10, 2026</span></div>
-      <div class="fact"><span class="v">Harvard University</span></div>
-      <div class="fact"><span class="v">20 experts from AI &amp; 20 evolutionary scientists</span></div>
     </div>
   </div>
 
