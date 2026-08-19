@@ -16,12 +16,12 @@
 <style>
   :root{
     --bg:#1c364e;
-    --surface:#101e2c;
+    --surface:#173044;
     --text:#f6e3c9;
     --muted:#c4b396;
     --accent:#ecc187;
-    --line:#0c1824;
-    --wash:#152838;
+    --line:#143049;
+    --wash:#162c41;
     --accent-hover:#f6e3c9;
     --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
     --sans:"Geist",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -81,9 +81,9 @@
 
   header{
     position:sticky;top:0;z-index:100;
-    background:rgba(16,30,44,.92);
+    background:rgba(28,54,78,.92);
     backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid rgba(236,193,135,.22);
   }
   .nav-toggle{
     position:absolute;width:1px;height:1px;padding:0;margin:-1px;
@@ -159,14 +159,14 @@
   }
   .hero-grid{
     display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-columns:minmax(0,38rem) minmax(18rem,1fr);
     align-items:center;
-    gap:2rem 3rem;
+    gap:2rem 6.5rem;
   }
   .hero-copy{max-width:36rem}
   .hero-mark{
     width:100%;
-    max-width:28rem;
+    max-width:24rem;
     height:auto;
     justify-self:end;
   }
@@ -186,7 +186,7 @@
   .hero .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
   .hero .cta .btn{white-space:nowrap}
   .hero-mark .venn-ring{fill:none;stroke:var(--accent);stroke-width:1.6}
-  .hero-mark .venn-ring-inner{fill:none;stroke:var(--accent);stroke-width:1;stroke-opacity:.4}
+  .hero-mark .venn-ring-inner{fill:none;stroke:var(--accent);stroke-width:1;stroke-opacity:.55}
   .hero-mark .venn-lens{fill:var(--accent);fill-opacity:.16}
   .hero-mark .venn-caption{
     fill:var(--accent);
@@ -290,8 +290,8 @@
   .people li{
     display:flex;align-items:center;gap:1.1rem;
     padding:1.15rem 1.3rem;
-    background:var(--surface);
-    border:1px solid var(--line);
+    background:transparent;
+    border:1px solid rgba(236,193,135,.22);
     border-radius:10px;
   }
   .people img{
@@ -386,8 +386,11 @@
         <circle class="venn-ring" cx="252" cy="148" r="122"/>
         <circle class="venn-ring-inner" cx="148" cy="148" r="86"/>
         <circle class="venn-ring-inner" cx="252" cy="148" r="86"/>
-        <text class="venn-caption venn-ai" x="148" y="304" text-anchor="middle">AI</text>
-        <text class="venn-caption" x="252" y="304" text-anchor="middle">Evolutionary Science</text>
+        <text class="venn-caption venn-ai" x="80" y="292" text-anchor="middle">AI</text>
+        <text class="venn-caption" x="320" y="281" text-anchor="middle">
+          <tspan x="320" dy="0">Evolutionary</tspan>
+          <tspan x="320" dy="16">Science</tspan>
+        </text>
       </svg>
     </div>
   </div>
