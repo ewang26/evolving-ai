@@ -293,20 +293,28 @@
   .perk p{font-size:.98rem;color:var(--muted);line-height:1.6}
   @media(max-width:680px){.perks{grid-template-columns:1fr}}
 
-  .group{margin-top:2.6rem}
-  .group:first-of-type{margin-top:0}
-  .group .label{display:block;margin-bottom:.55rem}
-  .people{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem}
+  .people{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
   .people li{
-    padding:1rem 0;border-bottom:1px solid var(--line);
-    display:flex;align-items:baseline;justify-content:space-between;gap:.5rem 1.2rem;flex-wrap:wrap;
+    display:flex;align-items:center;gap:1.1rem;
+    padding:1.15rem 1.3rem;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
   }
-  .people .name{font-size:1.12rem;color:var(--text);letter-spacing:0}
-  .people .role{font-family:var(--sans);font-size:.75rem;color:var(--muted);text-align:right}
-  @media(max-width:600px){
-    .people{grid-template-columns:1fr}
-    .people .role{text-align:left}
+  .people img{
+    width:58px;height:58px;flex:0 0 58px;
+    border-radius:50%;object-fit:cover;object-position:50% 22%;
+    background:var(--wash);border:1px solid var(--line);
   }
+  .people .who{min-width:0}
+  .people .name{display:block;font-size:1.08rem;line-height:1.3;color:var(--text);letter-spacing:0}
+  .people .name a{text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+  .people .name a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .people .role{display:block;font-family:var(--sans);font-size:.75rem;line-height:1.45;color:var(--muted);margin-top:.35rem}
+  .people .role a{text-decoration:none;border-bottom:1px solid rgba(180,184,176,.38);transition:color .15s,border-color .15s}
+  .people .role a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  @media(max-width:900px){.people{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.people{grid-template-columns:1fr}}
 
   footer{
     background:var(--bg);
@@ -342,7 +350,7 @@
       <a href="#premise">Premise</a>
       <a href="#topics">Topics</a>
       <a href="#gathering">The Gathering</a>
-      <a href="#conveners">Conveners</a>
+      <a href="#organizers">Organizers</a>
     </nav>
     <div class="nav-end">
       <a class="btn btn-nav" href="#fellowships">Apply</a>
@@ -358,7 +366,7 @@
     <a href="#premise">Premise</a>
     <a href="#topics">Topics</a>
     <a href="#gathering">The Gathering</a>
-    <a href="#conveners">Conveners</a>
+    <a href="#organizers">Organizers</a>
     <a class="btn btn-accent menu-apply" href="#fellowships">Apply</a>
   </nav>
 </div>
@@ -497,28 +505,70 @@
     </div>
   </section>
 
-  <section id="conveners">
+  <section id="organizers">
     <div class="container">
       <div class="sec-head">
-        <span class="label">05 — Conveners</span>
-        <h2>Organizers and planning group</h2>
+        <span class="label">05 — Organizers</span>
+        <h2>Organizers</h2>
       </div>
       <div class="group">
-        <span class="label">Organizers</span>
         <ul class="people">
-          <li><span class="name">Peter Fenton</span><span class="role">Benchmark</span></li>
-          <li><span class="name">David Sloan Wilson</span><span class="role">ProSocial World</span></li>
-        </ul>
-      </div>
-      <div class="group">
-        <span class="label">Core planning group</span>
-        <ul class="people">
-          <li><span class="name">Athena Aktipis</span><span class="role">Cooperative Futures Inst., ASU</span></li>
-          <li><span class="name">Jonathan Frankle</span><span class="role">Databricks</span></li>
-          <li><span class="name">Joseph Henrich</span><span class="role">Harvard University</span></li>
-          <li><span class="name">Sandy Pentland</span><span class="role">MIT &amp; Stanford</span></li>
-          <li><span class="name">James Tamplin</span><span class="role">Kradle.ai</span></li>
-          <li><span class="name">Erik Wang</span><span class="role">Benchmark</span></li>
+          <li>
+            <img src="images/peter-fenton.jpg" alt="Peter Fenton" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://en.wikipedia.org/wiki/Peter_Fenton_(venture_capitalist)" target="_blank" rel="noopener">Peter Fenton</a></span>
+              <span class="role"><a href="https://www.benchmark.com" target="_blank" rel="noopener">Benchmark</a></span>
+            </span>
+          </li>
+          <li>
+            <img src="images/david-sloan-wilson.jpg" alt="David Sloan Wilson" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://davidsloanwilson.world/" target="_blank" rel="noopener">David Sloan Wilson</a></span>
+              <span class="role"><a href="https://www.prosocial.world" target="_blank" rel="noopener">ProSocial World</a></span>
+            </span>
+          </li>
+          <li>
+            <img src="images/athena-aktipis.jpg" alt="Athena Aktipis" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://www.athenaaktipis.org/" target="_blank" rel="noopener">Athena Aktipis</a></span>
+              <span class="role"><a href="https://www.cooperativefutures.org" target="_blank" rel="noopener">Cooperative Futures Institute, ASU</a></span>
+            </span>
+          </li>
+          <li>
+            <img src="images/jonathan-frankle.jpg" alt="Jonathan Frankle" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://www.jfrankle.com/" target="_blank" rel="noopener">Jonathan Frankle</a></span>
+              <span class="role"><a href="https://www.databricks.com" target="_blank" rel="noopener">Databricks</a></span>
+            </span>
+          </li>
+          <li>
+            <img src="images/joseph-henrich.jpg" alt="Joseph Henrich" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://henrich.fas.harvard.edu/" target="_blank" rel="noopener">Joseph Henrich</a></span>
+              <span class="role"><a href="https://www.harvard.edu" target="_blank" rel="noopener">Harvard</a></span>
+            </span>
+          </li>
+          <li>
+            <img src="images/sandy-pentland.jpg" alt="Sandy Pentland" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://en.wikipedia.org/wiki/Alex_Pentland" target="_blank" rel="noopener">Sandy Pentland</a></span>
+              <span class="role"><a href="https://profiles.stanford.edu/alex-pentland" target="_blank" rel="noopener">MIT &amp; Stanford</a></span>
+            </span>
+          </li>
+          <li>
+            <img src="images/james-tamplin.jpg" alt="James Tamplin" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://tamplin.net/" target="_blank" rel="noopener">James Tamplin</a></span>
+              <span class="role"><a href="https://kradle.ai" target="_blank" rel="noopener">Kradle.ai</a></span>
+            </span>
+          </li>
+          <li>
+            <img src="images/erik-wang.jpg" alt="Erik Wang" width="58" height="58" loading="lazy">
+            <span class="who">
+              <span class="name"><a href="https://erikyw.com/" target="_blank" rel="noopener">Erik Wang</a></span>
+              <span class="role"><a href="https://www.benchmark.com" target="_blank" rel="noopener">Benchmark</a></span>
+            </span>
+          </li>
         </ul>
       </div>
     </div>
