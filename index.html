@@ -185,28 +185,22 @@
   }
   .hero .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
   .hero .cta .btn{white-space:nowrap}
-  .hero-mark .venn-ring{fill:none;stroke:var(--accent);stroke-width:1.45}
-  .hero-mark .venn-lens{fill:var(--accent);fill-opacity:.17}
-  .hero-mark .venn-join{fill:var(--accent)}
-  .hero-mark .venn-ai{
+  .hero-mark .venn-ring{fill:none;stroke:var(--accent);stroke-width:1.6}
+  .hero-mark .venn-ring-inner{fill:none;stroke:var(--accent);stroke-width:1;stroke-opacity:.4}
+  .hero-mark .venn-lens{fill:var(--accent);fill-opacity:.16}
+  .hero-mark .venn-caption{
     fill:var(--accent);
     font-family:var(--serif);
-    font-style:italic;
-    font-size:31px;
+    font-size:13px;
+    letter-spacing:.05em;
     font-optical-sizing:auto;
   }
-  .hero-mark .venn-evo{
-    fill:var(--accent);
-    font-family:var(--serif);
-    font-size:13.5px;
-    letter-spacing:.035em;
-    font-optical-sizing:auto;
-  }
+  .hero-mark .venn-ai{font-style:italic;letter-spacing:.04em}
 
   @media(max-width:880px){
     .hero{min-height:auto;padding:2.6rem 0 3.2rem}
     .hero-grid{grid-template-columns:1fr;gap:2.2rem}
-    .hero-mark{max-width:20rem;justify-self:start}
+    .hero-mark{max-width:16rem;justify-self:start}
     .hero h1{font-size:clamp(2.6rem,12vw,3.6rem)}
     .hero .lede{max-width:36ch}
   }
@@ -379,23 +373,21 @@
         <h1>Evolving <em>AI</em></h1>
         <p class="lede">A gathering of AI researchers and evolutionary scientists to catalyze serious conversation on human–AI coevolution.</p>
         <div class="cta">
-          <a class="btn btn-accent" href="#fellowships">See our inaugural fellowship program.</a>
+          <a class="btn btn-accent" href="#fellowships">Apply to be an inaugural fellow</a>
         </div>
       </div>
-      <svg class="hero-mark" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="venn-title">
+      <svg class="hero-mark" viewBox="0 0 400 328" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="venn-title">
         <title id="venn-title">Two overlapping fields: AI and Evolutionary Science</title>
         <defs>
-          <clipPath id="left-disk"><circle cx="146" cy="160" r="118"/></clipPath>
+          <clipPath id="left-disk"><circle cx="148" cy="148" r="122"/></clipPath>
         </defs>
-        <circle class="venn-lens" cx="254" cy="160" r="118" clip-path="url(#left-disk)"/>
-        <circle class="venn-ring" cx="146" cy="160" r="118"/>
-        <circle class="venn-ring" cx="254" cy="160" r="118"/>
-        <circle class="venn-join" cx="200" cy="160" r="2.6"/>
-        <text class="venn-ai" x="88" y="168" text-anchor="middle">AI</text>
-        <text class="venn-evo" x="312" y="160" text-anchor="middle">
-          <tspan x="312" dy="0">Evolutionary</tspan>
-          <tspan x="312" dy="17">Science</tspan>
-        </text>
+        <circle class="venn-lens" cx="252" cy="148" r="122" clip-path="url(#left-disk)"/>
+        <circle class="venn-ring" cx="148" cy="148" r="122"/>
+        <circle class="venn-ring" cx="252" cy="148" r="122"/>
+        <circle class="venn-ring-inner" cx="148" cy="148" r="86"/>
+        <circle class="venn-ring-inner" cx="252" cy="148" r="86"/>
+        <text class="venn-caption venn-ai" x="148" y="304" text-anchor="middle">AI</text>
+        <text class="venn-caption" x="252" y="304" text-anchor="middle">Evolutionary Science</text>
       </svg>
     </div>
   </div>
