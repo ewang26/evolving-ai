@@ -95,10 +95,10 @@
   }
   .nav{
     display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;
-    padding-block:.85rem;
+    padding-block:.95rem;
   }
   .wordmark{
-    font-family:var(--serif);font-size:1.85rem;font-weight:400;line-height:1;
+    font-family:var(--serif);font-size:1.525rem;font-weight:400;line-height:1;
     color:var(--text);text-decoration:none;justify-self:start;letter-spacing:0;
     margin:0;padding:0;transition:color .15s ease;
   }
@@ -168,7 +168,7 @@
     align-items:center;
     gap:2rem 5rem;
   }
-  .hero-copy{max-width:36rem;margin:0;padding:0}
+  .hero-copy{max-width:36rem;margin:0;padding:0 0 0 2.25rem}
   .hero-mark{
     width:100%;
     max-width:31.74rem;
@@ -195,10 +195,10 @@
   .countdown{
     display:flex;
     align-items:flex-start;
-    margin-top:1.85rem;
-    padding-top:1.25rem;
-    max-width:22rem;
-    border-top:1px solid rgba(236,193,135,.22);
+    margin-top:1.35rem;
+    padding-top:.9rem;
+    max-width:16.5rem;
+    border-top:1px solid rgba(236,193,135,.14);
   }
   .countdown:not(:has(.cd-unit)),
   .countdown.begun{
@@ -207,16 +207,16 @@
     padding-top:0;
     font-family:var(--serif);
     font-style:italic;
-    font-size:1.02rem;
+    font-size:.92rem;
     letter-spacing:0;
     color:var(--muted);
   }
   .cd-unit{
     flex:1 1 0;
     min-width:0;
-    padding-right:.95rem;
-    margin-right:.95rem;
-    border-right:1px solid rgba(236,193,135,.2);
+    padding-right:.7rem;
+    margin-right:.7rem;
+    border-right:1px solid rgba(236,193,135,.14);
   }
   .cd-unit:last-child{
     padding-right:0;
@@ -226,22 +226,23 @@
   .cd-n{
     display:block;
     font-family:var(--serif);
-    font-size:1.85rem;
+    font-size:1.22rem;
     font-weight:400;
     line-height:1;
     letter-spacing:.01em;
-    color:var(--text);
+    color:var(--muted);
     font-variant-numeric:tabular-nums lining-nums;
     font-feature-settings:"tnum" 1,"lnum" 1;
   }
   .cd-l{
     display:block;
-    margin-top:.42rem;
+    margin-top:.32rem;
     font-family:var(--serif);
-    font-size:.62rem;
+    font-size:.52rem;
     font-style:italic;
     letter-spacing:.04em;
     color:var(--muted);
+    opacity:.8;
     line-height:1;
   }
 
@@ -251,6 +252,7 @@
     .hero{min-height:auto;padding:2.6rem 0 3.2rem}
     .hero-grid{grid-template-columns:1fr;gap:2.2rem}
     .hero-mark{max-width:21.16rem;justify-self:start}
+    .hero-copy{padding-left:1.1rem}
     .hero h1{font-size:clamp(2.6rem,12vw,3.6rem)}
     .hero .lede{max-width:36ch}
   }
@@ -264,8 +266,8 @@
     .hero .label{letter-spacing:.12em}
     .hero .label .sep{display:none}
     .hero .when{display:block;margin-top:.35rem}
-    .cd-n{font-size:1.55rem}
-    .cd-unit{padding-right:.7rem;margin-right:.7rem}
+    .cd-n{font-size:1.12rem}
+    .cd-unit{padding-right:.55rem;margin-right:.55rem}
     .countdown{max-width:none}
   }
   .wash{background:var(--wash)}
@@ -431,7 +433,7 @@
         <div class="cta">
           <a class="btn btn-accent" href="#fellowships">Apply to be an inaugural fellow</a>
         </div>
-        <div class="countdown" id="countdown" aria-live="polite" aria-label="Time remaining until October 8, 2026">Until October 8, 2026</div>
+        <div class="countdown" id="countdown" aria-live="polite" aria-label="Time remaining until October 8, 2026 at 6pm Eastern">Until October 8, 2026, 6pm ET</div>
       </div>
       <svg class="hero-mark" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
@@ -635,7 +637,7 @@
 
   var el = document.getElementById("countdown");
   if (!el) return;
-  var start = Date.parse("2026-10-08T00:00:00-04:00");
+  var start = Date.parse("2026-10-08T18:00:00-04:00");
   function pad(n) { return n < 10 ? "0" + n : String(n); }
   function unit(n, label) {
     return '<span class="cd-unit"><span class="cd-n">' + n + '</span><span class="cd-l">' + label + "</span></span>";
