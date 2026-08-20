@@ -171,7 +171,7 @@
     justify-self:end;
     color:var(--accent);
   }
-  .hero .label{display:block;margin-bottom:1.5rem;color:var(--accent)}
+  .hero .label{display:block;margin-bottom:1.5rem;color:var(--accent);line-height:1.55}
   .hero .label .sep{margin-inline:.55rem;color:var(--line)}
   .hero h1{
     font-size:clamp(3.4rem,8vw,5.6rem);
@@ -188,6 +188,8 @@
   .hero .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
   .hero .cta .btn{min-width:13.5rem;white-space:nowrap}
 
+  section{padding:6rem 0;scroll-margin-top:5rem}
+
   @media(max-width:880px){
     .hero{min-height:auto;padding:2.6rem 0 3.2rem}
     .hero-grid{grid-template-columns:1fr;gap:2.2rem}
@@ -197,10 +199,15 @@
   }
   @media(max-width:520px){
     .hero .cta{flex-direction:column;align-items:stretch}
-    .hero .cta .btn{min-width:0;width:100%}
+    .hero .cta .btn{min-width:0;width:100%;white-space:normal;text-align:center}
+    section{padding:4rem 0}
+    .half,.perk{padding:1.7rem 1.35rem 1.55rem}
   }
-
-  section{padding:6rem 0;scroll-margin-top:5rem}
+  @media(max-width:420px){
+    .hero .label{letter-spacing:.12em}
+    .hero .label .sep{display:none}
+    .hero .when{display:block;margin-top:.35rem}
+  }
   .wash{background:var(--wash)}
   #premise{border-top:1px solid var(--line)}
   .sec-head{margin-bottom:2.6rem;max-width:52rem}
@@ -265,7 +272,6 @@
     color:var(--muted);margin-top:1rem;
   }
   .apply-row{display:flex;align-items:center;flex-wrap:wrap;gap:.9rem 1.15rem;margin-top:2.2rem}
-  .apply-row p{margin:0;font-size:.95rem}
 
   .perks{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem;margin:2.2rem 0}
   .perk{
@@ -359,7 +365,7 @@
   <div class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <span class="label">Harvard University<span class="sep">·</span>October 8–10, 2026</span>
+        <span class="label">Harvard University<span class="sep">·</span><span class="when">October 8–10, 2026</span></span>
         <h1>Evolving <em>AI</em></h1>
         <p class="lede">A gathering of AI researchers and evolutionary scientists to catalyze serious conversation on human–AI coevolution.</p>
         <div class="cta">
